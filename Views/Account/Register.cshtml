@@ -1,0 +1,25 @@
+﻿@model RegisterModel
+
+<h5 class="bg-warning text-black text-center p-2">Реєстрація</h5>
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label>Логін</label>
+        <input asp-for="@Model.UserName" name="UserName" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Пошта</label>
+        <input asp-for="@Model.Email" name="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Пароль</label>
+        <input asp-for="@Model.Password" name="Password" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Підтвердіть пароль</label>
+        <input asp-for="@Model.ConfirmPassword" class="form-control" />
+    </div>
+    <div class="py-2">
+        <button type="submit" class="btn btn-warning">Зареєструватися</button>
+    </div>
+</form>

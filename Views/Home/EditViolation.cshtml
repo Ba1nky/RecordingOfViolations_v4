@@ -1,0 +1,41 @@
+﻿@model RecordingOfViolations.Models.Violation
+@{
+    ViewBag.Title = "Редагувати порушення";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Порушення №@Model.ViolationId</h2>
+@using (Html.BeginForm("EditViolation","Home",FormMethod.Post))
+{
+    <fieldset>
+        @Html.HiddenFor(m => m.ViolationId)
+        @Html.HiddenFor(m => m.Date)
+        <p>
+            @Html.LabelFor(m => m.Reason,"Причина")
+            <br>
+            @Html.DropDownListFor(m => m.ReasonId, ViewBag.Reasons as SelectList)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Address,"Адреса")
+            <br>
+            @Html.EditorFor(m => m.Address)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Policeman,"Інспектор ДАІ")
+            <br>
+            @Html.EditorFor(m => m.Policeman)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Offender,"Порушник")
+            <br>
+            @Html.EditorFor(m => m.Offender)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Price,"Ціна")
+            <br>
+            @Html.EditorFor(m => m.Price)
+        </p>
+        <p>
+            <input type="submit" value="Редагувати">
+        </p>
+    </fieldset>
+}    

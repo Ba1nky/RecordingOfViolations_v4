@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Форма оформлення покупки</h3>
+    <form method="post" action="">
+        <input type="hidden" value="@ViewBag.ViolationId" name="ViolationId" />
+        <table>
+            <tr>
+                <td><p>Введіть тип оплати</p></td>
+                <td><input type="text" name="PaymentType"></td>
+            </tr>
+            <tr>
+                <td><p>Введіть своє Ппізвище та Ім'я</p></td>
+                <td><input type="text" name="Payer"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Відправити"></td>
+            </tr>
+        </table>
+    </form>
+</div>

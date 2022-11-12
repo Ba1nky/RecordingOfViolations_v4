@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RecordingOfViolations.Models.Violation>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Регістрація порушення правил дорожнього руху</h3>
+    <table>
+        <tr class="header">
+            <td><p>Причина</p></td>
+            <td><p>Адреса</p></td>
+            <td><p>Дата</p></td>
+            <td><p>Інспектор ДАІ</p></td>
+            <td><p>Порушник</p></td>
+            <td><p>Штраф</p></td>
+            <td></td>
+            <td></td>
+        </tr>
+        @foreach(RecordingOfViolations.Models.Violation v in Model)
+        {
+            <tr>
+                <td><p>@v.Reason.Name</p></td>
+                <td><p>@v.Address</p></td>
+                <td><p>@v.Date</p></td>
+                <td><p>@v.Policeman</p></td>
+                <td><p>@v.Offender</p></td>
+                <td><p>@v.Price</p></td>
+                <td><p><a href="/Home/Pay/@v.ViolationId">Оплатити</a></p></td>
+                <td><p>|</p></td>
+                <td><p><a href="/Home/EditViolation/@v.ViolationId">Редагувати</a></p></td>
+                <td><p>|</p></td>
+                <td><p><a href="/Home/DeleteViolation/@v.ViolationId">Видалити</a></p></td>
+            </tr>
+        }
+    </table>
+</div>

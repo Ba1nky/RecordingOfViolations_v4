@@ -1,0 +1,35 @@
+﻿@model RecordingOfViolations.Models.Violation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Видалення порушення</h2>
+<dl>
+    <dt>Причина</dt>
+    <dd>
+        @Html.DisplayFor(m => m.Reason.Name)
+    </dd>
+
+    <dt>Адреса</dt>
+    <dd>
+        @Html.DisplayFor(m => m.Address)
+    </dd>
+
+    <dt>Інспектор ДАІ</dt>
+    <dd>
+        @Html.DisplayFor(m => m.Policeman)
+    </dd>
+
+    <dt>Порушник</dt>
+    <dd>
+        @Html.DisplayFor(m => m.Offender)
+    </dd>
+
+    <dt>Ціна</dt>
+    <dd>
+        @Html.DisplayFor(m => m.Price)
+    </dd>
+</dl>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Видалити">
+}

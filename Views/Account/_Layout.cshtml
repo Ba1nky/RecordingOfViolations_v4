@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/css/Site.css")" rel="stylesheet" type="text/css"/>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body style="padding: 0px 40px 0px 40px;">
+    <nav>
+        <ul class="menu">
+            <li>@Html.ActionLink("Головна","Index","Home")</li>
+            <li>@Html.ActionLink("Додати порушення","CreateProduct","Home")</li>
+        </ul>
+        <ul class="menu">
+            <li>@Html.ActionLink("Вхід","Login","Account")</li>
+            <li>@Html.ActionLink("Реєстрація","Register","Account")</li>     
+
+        </ul>
+    </nav>
+    <div style="max-width:35%">
+        @RenderBody()
+    </div>
+</body>
+</html>

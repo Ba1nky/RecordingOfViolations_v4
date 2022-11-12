@@ -1,0 +1,36 @@
+﻿@model RecordingOfViolations.Models.Violation
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Нове порушення</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Reason,"Причина")
+    <br>
+    @Html.DropDownListFor(m => m.ReasonId, ViewBag.Reasons as SelectList)
+    <br>
+    <br>
+    @Html.LabelFor(m => m.Address,"Адреса")
+    <br>
+    @Html.EditorFor(m => m.Address)
+    <br>
+    <br>
+    @Html.LabelFor(m => m.Policeman,"Інспектор ДАІ")
+    <br>
+    @Html.EditorFor(m => m.Policeman)
+    <br>
+    <br>
+    @Html.LabelFor(m => m.Offender,"Порушник")
+    <br>
+    @Html.EditorFor(m => m.Offender)
+    <br>
+    <br>
+    @Html.LabelFor(m => m.Price,"Штраф")
+    <br>
+    @Html.EditorFor(m => m.Price)
+    <br>
+    <br>
+    <input type="submit" value="Добавити">
+}
